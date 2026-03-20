@@ -1,4 +1,4 @@
-# 🌩️ Lockit AI
+# 🌩️ StormShield AI
 
 ### Insurance That Verifies Reality, Not Just Location
 
@@ -6,7 +6,7 @@
 
 ## 🚀 Overview
 
-Lockit AI is a next-generation parametric insurance platform designed for gig workers (delivery partners, riders, field agents) operating in extreme weather conditions.
+StormShield AI is a next-generation parametric insurance platform designed for gig workers (delivery partners, riders, field agents) operating in extreme weather conditions.
 
 Traditional insurance systems rely heavily on GPS-based triggers, making them vulnerable to large-scale fraud through location spoofing. StormShield AI solves this by using a **multi-signal AI verification system** that evaluates real-world conditions instead of trusting location blindly.
 
@@ -22,11 +22,7 @@ Gig workers face real risks during extreme weather like heavy rain, floods, and 
 * Manual
 * Easy to exploit (via GPS spoofing)
 
-We wanted to build a system that:
-
-* Protects genuine workers instantly
-* Prevents coordinated fraud attacks
-* Works in real-world chaotic conditions
+We realized that most systems rely on a single signal (GPS), which can be easily manipulated. This inspired us to build a system that verifies **real-world conditions instead of just coordinates**.
 
 ---
 
@@ -45,153 +41,126 @@ It:
 
 ## 🧠 How We Built It
 
-We designed a **multi-layer intelligent verification system**:
+We designed a **multi-layer AI verification system** where multiple signals contribute to a final trust decision.
 
-### 1. Weather Intelligence Layer
+We define a simplified trust model as:
 
-* Real-time weather API integration
-* Detects high-risk zones (red alerts)
+$$
+TrustScore = w_1(Movement) + w_2(Network) + w_3(Device) + w_4(Behavior)
+$$
 
-### 2. Movement Intelligence
+Where:
 
-* Tracks route continuity
-* Detects unnatural jumps or static spoofing
+* **Movement** → route continuity & realistic speed
+* **Network** → IP vs GPS consistency
+* **Device** → spoofing detection
+* **Behavior** → delivery activity patterns
 
-### 3. Network Reality Check
+### System Layers:
 
-* Compares GPS vs IP location
-* Checks signal degradation during storms
+1. **Weather Intelligence Layer**
+   Detects real-time extreme weather zones
 
-### 4. Device Integrity Layer
+2. **Movement Intelligence**
+   Validates realistic travel paths
 
-* Detects mock location / spoofing tools
-* Flags suspicious device environments
+3. **Network Reality Check**
+   Compares network signals with location
 
-### 5. Trust Score Engine
+4. **Device Integrity Layer**
+   Detects tampering or spoofing tools
 
-* Assigns a dynamic trust score (0–100)
-* Based on behavior, history, and signals
+5. **Trust Score Engine**
+   Combines all signals into a final decision
 
 ---
 
 ## ⚔️ Adversarial Defense & Anti-Spoofing Strategy
 
-To prevent large-scale fraud attacks (like GPS spoofing syndicates), our platform uses **multi-signal verification instead of single-point GPS validation**.
+StormShield AI does not rely on GPS alone. It uses **multi-signal verification** to differentiate real users from fraudsters.
 
-### 🔍 Differentiation (Real vs Fake)
+### 🔍 Differentiation
 
-A real stranded worker shows:
+**Real user:**
 
-* Natural movement patterns
-* Recent delivery activity
-* Network disruption due to weather
+* Natural movement
+* Delivery activity
+* Network instability during storms
 
-A fraudster shows:
+**Fraud user:**
 
 * Sudden location jumps
-* No movement history
-* Mismatch between GPS and network
+* No activity history
+* GPS vs network mismatch
 
----
+### 📊 Signals Used
 
-### 📊 Data Signals Used
+* Movement history
+* Device integrity
+* Network consistency
+* Delivery logs
+* Traffic data (Google Maps API)
+* Crowd behavior patterns
 
-Beyond GPS, we analyze:
+### 🌐 Crowd Validation
 
-* Movement history (route continuity, speed)
-* Device integrity (mock location detection)
-* Network signals (IP vs GPS match, signal strength)
-* Delivery activity (recent orders, route logs)
-* Traffic intelligence (Google Maps congestion data)
-* Crowd patterns (nearby users showing similar disruption)
+The system passively checks nearby user patterns:
 
----
+* Similar movement slowdown
+* Similar network degradation
 
-### 🌐 Crowd Behavior Validation (Key Innovation)
+> If multiple users show similar disruption → likely real
+> If isolated → suspicious
 
-Instead of relying on manual verification, the system passively analyzes:
+### ⚖️ Fairness
 
-* Nearby user patterns
-* Movement slowdown in same area
-* Network degradation consistency
+* High confidence → Instant payout
+* Medium → Soft verification
+* High risk → Flagged
 
-> If multiple users in the same region show similar disruption → claim is likely genuine
-> If only one isolated claim appears → flagged as suspicious
-
----
-
-### ⚖️ UX Balance (Fairness for Users)
-
-We ensure genuine users are never unfairly penalized:
-
-#### ✅ High Confidence Claims
-
-* Instant payout
-
-#### ⚠️ Medium Risk Claims
-
-* Soft verification
-* No immediate rejection
-
-#### 🚨 High Risk Claims
-
-* Flagged for fraud review
-* Payment temporarily held
-
-> No claim is rejected based on a single missing signal.
+> No claim is rejected based on a single signal.
 
 ---
 
 ## 🏆 Accomplishments
 
-* Designed a fraud-resistant insurance architecture
-* Built a scalable anti-spoofing system
-* Balanced security with user fairness
-* Created a real-world applicable solution
+* Built a fraud-resistant architecture
+* Designed scalable anti-spoofing logic
+* Balanced security and user experience
 
 ---
 
 ## ⚠️ Challenges We Ran Into
 
-* Detecting GPS spoofing without harming real users
-* Handling poor network conditions during storms
-* Designing a system resistant to coordinated fraud attacks
+* Detecting spoofing without harming genuine users
+* Handling unstable networks during storms
+* Preventing coordinated fraud attacks
 
 ---
 
 ## 📚 What We Learned
 
-* Real-world systems require multi-layer validation
-* Security must be balanced with user experience
-* Fraud detection is not just technical — it's behavioral
+* Multi-signal validation is essential
+* Fraud detection is behavioral
+* Security must be user-friendly
 
 ---
 
 ## 🔮 What’s Next
 
-* Integrate with real delivery platforms (Swiggy, Zomato)
-* Improve ML models for fraud detection
-* Deploy real-time analytics dashboard
-* Scale to multiple cities and countries
+* Integration with delivery platforms
+* Improved ML models
+* Real-time dashboards
+* Scaling globally
 
 ---
 
 ## 🛠️ Built With
 
-* React.js
-* Tailwind CSS
-* Node.js
-* Python
-* AI/ML Models
-* Weather API
-* Google Maps API
+React.js, Tailwind CSS, Node.js, Python (AI/ML), Weather API, Google Maps API, MongoDB/Firebase, Framer Motion
 
-
+---
 
 ## 💥 Final Statement
 
-Lockit  AI is not just an insurance platform.
-
-It is a **fraud-resistant safety net for the future gig economy**, built to operate in real-world chaos with intelligence, fairness, and resilience.
-
-> “While others verify location, we verify reality.”
+StormShield AI is a **fraud-resistant safety net for the future gig economy**, built to operate in real-world chaos with intelligence and fairne
